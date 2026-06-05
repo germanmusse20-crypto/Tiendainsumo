@@ -1,0 +1,400 @@
+/* 
+================================================================
+  AGROSTOCK - SISTEMA DE INVENTARIO Y VENTAS DE INSUMOS AGRÍCOLAS
+  Estilos CSS Personalizados para Interfaz Profesional
+================================================================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Paleta de colores Agrícola Premium */
+  --primary-green: #1b4332;
+  --primary-green-rgb: 27, 67, 50;
+  --medium-green: #2d6a4f;
+  --light-green: #40916c;
+  --accent-sage: #74c69d;
+  --accent-sage-rgb: 116, 198, 157;
+  --accent-amber: #d97706;
+  --accent-amber-rgb: 217, 119, 6;
+  --danger-red: #ef4444;
+  --danger-red-rgb: 239, 68, 68;
+  --bg-light: #f4f7f5;
+  --bg-dark: #0f1a15;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 5px 15px -8px rgba(0, 0, 0, 0.05);
+  --hover-shadow: 0 20px 40px -10px rgba(27, 67, 50, 0.12), 0 10px 20px -12px rgba(27, 67, 50, 0.08);
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+/* Scrollbar Personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--light-green);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-green);
+}
+
+/* ==========================================
+   Navegación (Navbar)
+========================================== */
+.custom-navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(27, 67, 50, 0.92) !important;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.custom-navbar .navbar-brand {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  font-size: 1.5rem;
+}
+.custom-navbar .nav-link {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+  padding: 0.5rem 1rem !important;
+}
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: var(--accent-sage) !important;
+}
+
+/* ==========================================
+   Sección Hero
+========================================== */
+.hero-section {
+  position: relative;
+  padding: 8rem 0 6rem 0;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-green) 100%);
+  color: white;
+  overflow: hidden;
+}
+
+/* Fondo decorativo con hojas/patrón sutil */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle at 80% 20%, rgba(116, 198, 157, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 20% 80%, rgba(217, 119, 6, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  background: linear-gradient(to right, #ffffff, #a7f3d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-demo {
+  background: rgba(116, 198, 157, 0.15);
+  border: 1px solid rgba(116, 198, 157, 0.3);
+  color: var(--accent-sage);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.hero-dashboard-preview {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+  transition: all 0.5s ease;
+}
+
+.hero-dashboard-preview:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+/* Float badge interactivo */
+.floating-badge {
+  position: absolute;
+  background: rgba(15, 26, 21, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  animation: float 4s ease-in-out infinite;
+}
+
+.floating-badge.badge-1 {
+  top: 15%;
+  left: -5%;
+}
+
+.floating-badge.badge-2 {
+  bottom: 15%;
+  right: -5%;
+  animation-delay: 2s;
+}
+
+/* ==========================================
+   Tarjetas e Interfaz (Glassmorphism & Shadows)
+========================================== */
+.card-glass {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(27, 67, 50, 0.08);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-glass:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+  border-color: rgba(116, 198, 157, 0.3);
+}
+
+.feature-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  background-color: rgba(45, 106, 79, 0.08);
+  color: var(--medium-green);
+  transition: all 0.3s ease;
+}
+
+.card-glass:hover .feature-icon-wrapper {
+  background-color: var(--medium-green);
+  color: white;
+  transform: scale(1.1);
+}
+
+/* ==========================================
+   Dashboard Mockup
+========================================== */
+.dashboard-mockup {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+
+.dashboard-sidebar {
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+}
+
+.dashboard-sidebar .list-group-item {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.dashboard-sidebar .list-group-item:hover,
+.dashboard-sidebar .list-group-item.active {
+  background: rgba(45, 106, 79, 0.08);
+  color: var(--primary-green);
+}
+
+.dashboard-kpi-card {
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  border: 1px solid #f1f5f9;
+  background-color: #f8fafc;
+}
+
+/* ==========================================
+   Simulador de Stock
+========================================== */
+.simulator-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f9fbf9 100%);
+  border: 2px solid rgba(45, 106, 79, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.stock-meter-container {
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stock-meter-bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--accent-sage), var(--medium-green));
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.alert-toast {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.alert-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+  animation: pulse-danger 2s infinite;
+}
+
+/* ==========================================
+   Botones Premium
+========================================== */
+.btn-primary-green {
+  background-color: var(--medium-green);
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(45, 106, 79, 0.2);
+}
+
+.btn-primary-green:hover {
+  background-color: var(--primary-green);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(27, 67, 50, 0.3);
+}
+
+.btn-accent-amber {
+  background-color: var(--accent-amber);
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+}
+
+.btn-accent-amber:hover {
+  background-color: #b45309;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.35);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-white:hover {
+  background: white;
+  color: var(--primary-green);
+  border-color: white;
+}
+
+/* ==========================================
+   Login Modal
+========================================== */
+.modal-login-content {
+  border-radius: 20px;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-login-header {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--medium-green) 100%);
+  color: white;
+  border-bottom: none;
+  padding: 2rem;
+}
+
+.role-selector-btn {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.role-selector-btn:hover {
+  border-color: var(--accent-sage);
+  background-color: rgba(116, 198, 157, 0.05);
+}
+
+.role-selector-btn.active {
+  border-color: var(--medium-green);
+  background-color: rgba(45, 106, 79, 0.05);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+/* ==========================================
+   Animaciones Keyframes
+========================================== */
+@keyframes float {
+  0% { transform: translateY(0px) rotateY(-5deg); }
+  50% { transform: translateY(-10px) rotateY(-5deg); }
+  100% { transform: translateY(0px) rotateY(-5deg); }
+}
+
+@keyframes pulse-danger {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.animated-counter {
+  background: linear-gradient(45deg, var(--primary-green), var(--light-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
