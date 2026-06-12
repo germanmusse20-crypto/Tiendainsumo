@@ -398,3 +398,122 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
   font-weight: 800;
 }
+
+/* ==========================================
+   Módulo de Autenticación (Login & Registro)
+========================================== */
+.auth-wrapper {
+  min-vh-100;
+}
+
+.auth-bg-panel {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(27, 67, 50, 0.92) 0%, rgba(15, 26, 21, 0.96) 100%);
+  z-index: 1;
+}
+
+.auth-bg-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 4rem;
+  max-width: 600px;
+}
+
+.auth-form-panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 3rem 1.5rem;
+}
+
+.auth-card-body {
+  width: 100%;
+  max-width: 440px;
+}
+
+.auth-input-group {
+  position: relative;
+}
+
+.auth-input-group .form-control {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.auth-input-group .form-control:focus {
+  border-color: var(--light-green);
+  box-shadow: 0 0 0 4px rgba(64, 145, 108, 0.15);
+}
+
+.auth-input-group .input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  z-index: 4;
+}
+
+.auth-input-group .password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 4;
+  padding: 0;
+}
+
+.auth-input-group .password-toggle:hover {
+  color: var(--medium-green);
+}
+
+/* Indicador de Fuerza de Contraseña */
+.password-strength-meter {
+  height: 4px;
+  background-color: #e2e8f0;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.password-strength-bar {
+  height: 100%;
+  width: 0;
+  transition: all 0.3s ease;
+}
+
+/* Clases de utilidad para responsive */
+@media (max-width: 991.98px) {
+  .auth-bg-panel {
+    display: none !important;
+  }
+  .auth-form-panel {
+    background: radial-gradient(circle at 10% 20%, rgba(116, 198, 157, 0.05) 0%, transparent 60%),
+                radial-gradient(circle at 90% 80%, rgba(217, 119, 6, 0.03) 0%, transparent 60%),
+                #ffffff;
+  }
+}
+

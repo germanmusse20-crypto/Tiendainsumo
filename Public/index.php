@@ -48,9 +48,9 @@
                         <a class="nav-link" href="#categorias"><i class="bi bi-tags me-1"></i> Insumos</a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <button class="btn btn-accent-amber w-100" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <a class="btn btn-accent-amber w-100" href="../view/auth/login.php">
                             <i class="bi bi-box-arrow-in-right me-2"></i>Acceso al Sistema
-                        </button>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -76,9 +76,9 @@
                         <a href="#simulador" class="btn btn-accent-amber btn-lg px-4 py-3">
                             <i class="bi bi-play-circle me-2"></i>Probar Simulador
                         </a>
-                        <button class="btn btn-outline-white btn-lg px-4 py-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <a href="../view/auth/login.php" class="btn btn-outline-white btn-lg px-4 py-3">
                             <i class="bi bi-shield-lock me-2"></i>Entrar al Portal
-                        </button>
+                        </a>
                     </div>
                     
                     <!-- Pequeña fila de stats en Hero -->
@@ -482,9 +482,9 @@
         <div class="container py-4 text-center">
             <h2 class="h1 fw-bold mb-3">¿Listo para modernizar tu agro-comercio?</h2>
             <p class="lead text-white-50 max-width-md mx-auto mb-4">Agenda una asesoría técnica gratuita con nuestros ingenieros de soporte para estructurar las categorías de tu almacén hoy mismo.</p>
-            <button class="btn btn-accent-amber btn-lg px-5 py-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <a href="../view/auth/login.php" class="btn btn-accent-amber btn-lg px-5 py-3">
                 <i class="bi bi-telephone-outbound me-2"></i> Solicitar Información del Sistema
-            </button>
+            </a>
         </div>
     </section>
 
